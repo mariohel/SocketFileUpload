@@ -1,0 +1,8 @@
+<div id="UploadBox">
+			<h2>File Uploader</h2>
+			<span id='UploadArea'>				  
+				<label for="FileBox">Choose A File: </label><input type="file" id="FileBox" file-change="fileChanged" ><br>				
+				<button type='button' id='UploadButton' class='Button' ng-click="uploadFile()" ng-disabled="!file" >Upload</button>
+			</span>
+			<span ng-if="fileUploading" id='NameArea'>Uploading .. {{percentUploaded}} %</span>			
+</div>

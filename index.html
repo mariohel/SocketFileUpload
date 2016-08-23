@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="socketApp">
+<!--[if lt IE 7]>      <html lang="en" ng-app="socketApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="socketApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="socketApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="socketApp" class="no-js"> <!--<![endif]-->
+  <head>
+  		<base href="/SocketFileUpload/">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+    
+		<title>File Uploader</title>
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="node_modules/angular-route/angular-route.min.js"></script>	
+		<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>	
+		<script src="node_modules/socket.io-client/socket.io.js"></script>
+		<script src="node_modules/socket.io-stream/socket.io-stream.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		
+		<!-- APP JS Files -->   
+		<script src="app/app.module.js"></script>
+		<script src="app/app.route.js"></script>
+		
+		<!-- MODULE JS Files -->   
+		<script src="modules/home/home.module.js"></script>
+		<script src="modules/home/home.controller.js"></script>
+		<script src="modules/home/home.route.js"></script>
+		<script src="modules/home/home.service.js"></script>
+		<script src="modules/home/home.directive.js"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+// 		$("document").ready(function(){
+// 			var socket = io.connect('http://localhost:8080');			
+			
+// 			  $('#FileBox').change(function(e) {
+// 				var file = e.target.files[0];
+// 				var stream = ss.createStream();
+				
+// 				console.log('file selected : '+file.name);
+			    
+// 			    // upload a file to the server.
+// 			    ss(socket).emit('file', stream, {size: file.size , name:file.name});			    
+// 			    var blobStream = ss.createBlobReadStream(file);
+// 			    var size = 0;
+
+// 			    blobStream.on('data', function(chunk) {
+// 			      size += chunk.length;
+// 			      console.log("Uploading"+ Math.floor(size / file.size * 100) + '%');
+// 				  var Content = "<span id='NameArea'>Uploading " + file.name + "</span>";
+// 				  Content += '<div id="ProgressContainer"><div id="ProgressBar"></div></div><span id="percent">'+Math.floor(size / file.size * 100)+' %</span>';
+// 				  Content += "<span id='Uploaded'> - <span id='MB'>0</span>/" + Math.round(file.size / 1048576) + "MB</span>";
+// 				  $('#UploadArea').innerHTML = Content;
+				  
+
+// 			    });
+
+// 			    blobStream.pipe(stream);
+			    
+// 			  });
+
+// 		});			
+		</script>
+		
+	 <style>[ng-cloak] { display: none; }</style>
+</head>
+<body>	
+  <div ng-view layout="column" ></div>  
+</body>
+</html>
+		
+<!-- 	</head> -->
+<!-- 	<body>  -->
+<!-- 		<div id="UploadBox"> -->
+<!-- 			<h2>Video Uploader</h2> -->
+<!-- 			<span id='UploadArea'>				   -->
+<!-- 				<label for="FileBox">Choose A File: </label><input type="file" id="FileBox" ng-change=""><br>				 -->
+<!-- 				<button	type='button' id='UploadButton' class='Button'>Upload</button> -->
+<!-- 			</span> -->
+<!-- 			<div ng-if="fileUploading"> -->
+<!-- 				<span id='NameArea'>Uploading {{file.name}}</span> -->
+<!-- 				<div id="ProgressContainer"><div id="ProgressBar"></div></div> -->
+<!-- 				<span id="percent">{{percentUploaded}} %</span> -->
+<!-- 				<span id='Uploaded'> - <span id='MB'>{{sizeUploaded}}</span>/{{Math.round(file.size / 1048576)}}MB</span> -->
+<!-- 			</div> -->
+			
+<!-- 		</div> -->
+<!-- 	</body> -->
+<!-- </html> -->
